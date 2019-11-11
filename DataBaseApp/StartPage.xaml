@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="345,54,0,0" TextWrapping="Wrap" Text="Already have a database?" VerticalAlignment="Top"/>
-        <Button Content="Yes" HorizontalAlignment="Left" Margin="309,138,0,0" VerticalAlignment="Top" Click="Button_HaveDb"/>
-        <Button Content="Create new" HorizontalAlignment="Left" Margin="477,138,0,0" VerticalAlignment="Top" Click="Button_CreateDb"/>
+        <Button Content="Yes" HorizontalAlignment="Left" Margin="324,138,0,0" VerticalAlignment="Top" Click="Button_HaveDb" Width="72"/>
+        <Button Content="Create new" HorizontalAlignment="Left" Margin="457,138,0,0" VerticalAlignment="Top" Click="Button_CreateDb" Width="72"/>
     </Grid>
 </Window>

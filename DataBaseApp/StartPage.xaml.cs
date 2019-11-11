@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using Npgsql;
 
 namespace DataBaseApp
@@ -9,6 +10,10 @@ namespace DataBaseApp
     public partial class StartWindow : Window
     {
         private readonly string nameDb = "farmDb";
+        private readonly string createBarn = "create_barn()";
+        private readonly string createCorral = "create_corral()";
+        private readonly string createAnimal = "create_animal()";
+
         public StartWindow()
         {
             InitializeComponent();
@@ -43,6 +48,33 @@ namespace DataBaseApp
             }
         }
 
+
+        private void CreateTable(string procedureName)
+        {
+            FormattableString formattableString = $"Server=localhost;Port=5432;User Id=postgres;Password=test2012!;Database={nameDb};";
+            string connStr = formattableString.ToString();
+            NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
+            NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
+                $@"
+                CALL {procedureName}
+                ", npgsql);
+
+            npgsql.Open();
+            npgsqlCommand.Connection = npgsql;
+            try
+            {
+                npgsqlCommand.ExecuteNonQuery();
+                MessageBox.Show($"Database table with name {procedureName} is successfully created");
+            }
+            catch (PostgresException ex)
+            {
+                MessageBox.Show(ex.MessageText);
+            }
+            finally
+            {
+                npgsql.Close();
+            }
+        }
         private void Button_HaveDb(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
