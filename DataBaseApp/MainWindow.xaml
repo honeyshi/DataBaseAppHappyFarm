@@ -13,6 +13,7 @@
         </Grid.ColumnDefinitions>
         <RadioButton x:Name="DropDbOption" Content="Drop Data Base" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,118,0,0" VerticalAlignment="Top"/>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="350,61,0,0" Text="What do you want to do?" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button Content="Execute" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="350,377,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click"/>
+        <Button Content="Execute" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="350,355,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click"/>
+        <RadioButton x:Name="OutputTableOption" Content="Output table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,150,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

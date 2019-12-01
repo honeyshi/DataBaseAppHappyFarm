@@ -1,0 +1,19 @@
+﻿<Window x:Class="DataBaseApp.ShowTableOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseApp"
+        mc:Ignorable="d"
+        Title="ShowTableOptions" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="ShowAnimal" Content="Show animal table" HorizontalAlignment="Center" Height="29" Margin="0,63,0,0" VerticalAlignment="Top" Width="212" Click="ShowAnimal_Click"/>
+        <Button x:Name="ShowCorral" Content="Show corral table" HorizontalAlignment="Center" Height="29" Margin="0,124,0,0" VerticalAlignment="Top" Width="212" Click="ShowCorral_Click"/>
+        <Button x:Name="ShowBarn" Content="Show barn table" HorizontalAlignment="Center" Height="29" Margin="0,185,0,0" VerticalAlignment="Top" Width="212" Click="ShowBarn_Click"/>
+        <Button x:Name="ShowFood" Content="Show food table" HorizontalAlignment="Center" Height="29" Margin="0,244,0,0" VerticalAlignment="Top" Width="212" Click="ShowFood_Click"/>
+        <Button x:Name="ShowFeeding" Content="Show feeding table" HorizontalAlignment="Center" Height="29" Margin="0,301,0,0" VerticalAlignment="Top" Width="212" Click="ShowFeeding_Click"/>
+        <Button x:Name="ShowSickAnimals" Content="Show sick animals table" HorizontalAlignment="Center" Height="29" Margin="0,361,0,0" VerticalAlignment="Top" Width="212" Click="ShowSickAnimals_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,26,0,0" Text="Choose table to output" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

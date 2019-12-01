@@ -21,11 +21,15 @@ namespace DataBaseApp
                 // drop database
                 DropDb();
             }
+            if (OutputTableOption.IsChecked == true)
+            {
+                OutputTable();
+            }
         }
 
         private void DropDb()
         {
-            string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=test2012!;";
+            string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;";
             NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
             NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
                 $@"
@@ -52,6 +56,13 @@ namespace DataBaseApp
             {
                 npgsql.Close();
             }
+        }
+
+        private void OutputTable()
+        {
+            ShowTableOptions showTableOptions = new ShowTableOptions();
+            showTableOptions.Show();
+            this.Close();
         }
     }
 }

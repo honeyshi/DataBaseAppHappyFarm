@@ -21,8 +21,8 @@ namespace DataBaseApp
 
         private void Button_CreateDb(object sender, RoutedEventArgs e)
         {
-            string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=test2012!;";
-            NpgsqlConnection npgsql = new NpgsqlConnection(connStr);          
+            string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;";
+            NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
             NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
                 $@"
                 CREATE DATABASE {nameDb}
