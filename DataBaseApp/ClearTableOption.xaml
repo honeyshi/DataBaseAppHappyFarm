@@ -1,0 +1,20 @@
+﻿<Window x:Class="DataBaseApp.ClearTableOption"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseApp"
+        mc:Ignorable="d"
+        Title="ClearTableOption" Height="500" Width="800">
+    <Grid>
+        <Button x:Name="ClearAnimal" Content="Clear animal table" HorizontalAlignment="Center" Height="29" Margin="0,54,0,0" VerticalAlignment="Top" Width="212" Click="ClearAnimal_Click"/>
+        <Button x:Name="ClearCorral" Content="Clear corral table" HorizontalAlignment="Center" Height="29" Margin="0,106,0,0" VerticalAlignment="Top" Width="212" Click="ClearCorral_Click"/>
+        <Button x:Name="ClearBarn" Content="Clear barn table" HorizontalAlignment="Center" Height="29" Margin="0,162,0,0" VerticalAlignment="Top" Width="212" Click="ClearBarn_Click"/>
+        <Button x:Name="ClearFood" Content="Clear food table" HorizontalAlignment="Center" Height="29" Margin="0,219,0,0" VerticalAlignment="Top" Width="212" Click="ClearFood_Click"/>
+        <Button x:Name="ClearFeeding" Content="Clear feeding table" HorizontalAlignment="Center" Height="29" Margin="0,274,0,0" VerticalAlignment="Top" Width="212" Click="ClearFeeding_Click"/>
+        <Button x:Name="ClearSickAnimals" Content="Clear sick animals table" HorizontalAlignment="Center" Height="29" Margin="0,329,0,0" VerticalAlignment="Top" Width="212" Click="ClearSickAnimals_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,26,0,0" Text="Choose table to clear" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="ClearAll" Content="Clear all tables" HorizontalAlignment="Center" Margin="0,381,0,0" Height="29" Width="212" VerticalAlignment="Top" Click="ClearAll_Click"/>
+
+    </Grid>
+</Window>

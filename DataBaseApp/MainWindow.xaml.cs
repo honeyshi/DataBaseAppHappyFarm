@@ -25,6 +25,10 @@ namespace DataBaseApp
             {
                 OutputTable();
             }
+            if (ClearTableOption.IsChecked == true)
+            {
+                DeleteTable();
+            }
         }
 
         private void DropDb()
@@ -62,6 +66,13 @@ namespace DataBaseApp
         {
             ShowTableOptions showTableOptions = new ShowTableOptions();
             showTableOptions.Show();
+            this.Close();
+        }
+
+        private void DeleteTable()
+        {
+            ClearTableOption clearTableOption = new ClearTableOption();
+            clearTableOption.Show();
             this.Close();
         }
     }
