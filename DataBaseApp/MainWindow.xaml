@@ -16,5 +16,6 @@
         <Button Content="Execute" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="350,355,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click"/>
         <RadioButton x:Name="OutputTableOption" Content="Output table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,150,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="ClearTableOption" Content="Clear table" Grid.Column="1" HorizontalAlignment="Left" Margin="360,183,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="SearchByFieldOption" Content="Search sick animal by animal type" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,215,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

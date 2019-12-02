@@ -29,6 +29,10 @@ namespace DataBaseApp
             {
                 DeleteTable();
             }
+            if (SearchByFieldOption.IsChecked == true)
+            {
+                SearchByField();
+            }
         }
 
         private void DropDb()
@@ -73,6 +77,13 @@ namespace DataBaseApp
         {
             ClearTableOption clearTableOption = new ClearTableOption();
             clearTableOption.Show();
+            this.Close();
+        }
+
+        private void SearchByField()
+        {
+            SearchByFieldWindow searchByFieldWindow = new SearchByFieldWindow();
+            searchByFieldWindow.Show();
             this.Close();
         }
     }
