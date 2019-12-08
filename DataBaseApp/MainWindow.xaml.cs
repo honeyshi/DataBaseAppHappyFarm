@@ -43,6 +43,10 @@ namespace DataBaseApp
             {
                 UpdateData();
             }
+            if (DeleteByIdOption.IsChecked == true)
+            {
+                DeleteById();
+            }
         }
 
         #region Option Methods
@@ -109,6 +113,13 @@ namespace DataBaseApp
         {
             UpdateDataOption updateDataOption = new UpdateDataOption();
             updateDataOption.Show();
+            this.Close();
+        }
+
+        private void DeleteById()
+        {
+            DeleteByIdOption deleteByIdOption = new DeleteByIdOption();
+            deleteByIdOption.Show();
             this.Close();
         }
         #endregion

@@ -1,0 +1,21 @@
+﻿<Window x:Class="DataBaseApp.DeleteByIdOption"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseApp"
+        mc:Ignorable="d"
+        Title="DeleteByIdOption" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="DeleteTextBox" HorizontalAlignment="Center" Margin="0,76,0,0" Text="Input ID" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MouseDoubleClick="DeleteTextBox_MouseDoubleClick"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,34,0,0" Text="Input ID of record which you want to delete" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="DeleteAnimal" Content="Delete from animal table" HorizontalAlignment="Center" Height="29" Margin="0,155,0,0" VerticalAlignment="Top" Width="212" Click="DeleteAnimal_Click"/>
+        <Button x:Name="DeleteCorral" Content="Delete from corral table" HorizontalAlignment="Center" Height="29" Margin="0,194,0,0" VerticalAlignment="Top" Width="212" Click="DeleteCorral_Click"/>
+        <Button x:Name="DeleteBarn" Content="Delete from barn table" HorizontalAlignment="Center" Height="29" VerticalAlignment="Top" Width="212" Click="DeleteBarn_Click" Margin="0,235,0,0"/>
+        <Button x:Name="DeleteFood" Content="Delete from food table" HorizontalAlignment="Center" Height="29" Margin="0,276,0,0" VerticalAlignment="Top" Width="212" Click="DeleteFood_Click"/>
+        <Button x:Name="DeleteFeeding" Content="Delete from feeding table" HorizontalAlignment="Center" Height="29" Margin="0,318,0,0" VerticalAlignment="Top" Width="212" Click="DeleteFeeding_Click"/>
+        <Button x:Name="DeleteSickAnimals" Content="Delete from sick animals table" HorizontalAlignment="Center" Height="29" Margin="0,361,0,0" VerticalAlignment="Top" Width="212" Click="DeleteSickAnimals_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,117,0,0" Text="Choose table from which delete" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -11,13 +11,14 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <RadioButton x:Name="DropDbOption" Content="Drop Data Base" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,118,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="DropDbOption" Content="Drop Data Base" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,110,0,0" VerticalAlignment="Top"/>
         <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="350,61,0,0" Text="What do you want to do?" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button Content="Execute" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="350,355,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click"/>
-        <RadioButton x:Name="OutputTableOption" Content="Output table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,150,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="ClearTableOption" Content="Clear table" Grid.Column="1" HorizontalAlignment="Left" Margin="360,183,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="SearchByFieldOption" Content="Search sick animal by animal type" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,215,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="AddNewDataOption" Content="Add new value in table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,248,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="UpdateTableOption" Content="Update value in table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,279,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="OutputTableOption" Content="Output table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,138,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="ClearTableOption" Content="Clear table" Grid.Column="1" HorizontalAlignment="Left" Margin="360,167,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="SearchByFieldOption" Content="Search sick animal by animal type" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,194,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="AddNewDataOption" Content="Add new value in table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,222,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="UpdateTableOption" Content="Update value in table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,250,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="DeleteByIdOption" Content="Delete record in table by Id" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,277,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
