@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System;
+using System.ComponentModel;
+using System.Windows;
 using Npgsql;
 
 namespace DataBaseApp
@@ -33,8 +35,13 @@ namespace DataBaseApp
             {
                 SearchByField();
             }
+            if (AddNewDataOption.IsChecked == true)
+            {
+                AddNewData();
+            }
         }
 
+        #region Option Methods
         private void DropDb()
         {
             string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;";
@@ -86,5 +93,13 @@ namespace DataBaseApp
             searchByFieldWindow.Show();
             this.Close();
         }
+
+        private void AddNewData()
+        {
+            AddNewDataOption addNewDataOption = new AddNewDataOption();
+            addNewDataOption.Show();
+            this.Close();
+        }
+        #endregion
     }
 }

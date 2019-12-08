@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows;
 using Npgsql;
 
@@ -23,19 +24,35 @@ namespace DataBaseApp
         {
             string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;";
             NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
-            NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
+            /*NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
                 $@"
                 CREATE DATABASE {nameDb}
                 WITH OWNER = postgres
                 ENCODING = 'UTF8'
                 CONNECTION LIMIT = -1;
+                ", npgsql);*/
+            NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
+                $@"
+                CREATE OR REPLACE FUNCTION CREATE_DB(NAME TEXT)
+                RETURNS INTEGER
+                AS $$
+                BEGIN 
+                PERFORM DBLINK_EXEC('dbname=postgres user=postgres password=15postuser*15', 'CREATE DATABASE ' || NAME);
+                RETURN 1; 
+                END; $$ 
+                LANGUAGE PLPGSQL;
                 ", npgsql);
+
+            NpgsqlCommand createDb = new NpgsqlCommand("CREATE_DB", npgsql);
+            createDb.CommandType = CommandType.StoredProcedure;
+            createDb.Parameters.AddWithValue("name", nameDb);
 
             npgsql.Open();
             npgsqlCommand.Connection = npgsql;
             try
             {
                 npgsqlCommand.ExecuteNonQuery();
+                createDb.ExecuteNonQuery();
                 MessageBox.Show($"Database with name {nameDb} is successfully created");
             }
             catch (PostgresException ex)
