@@ -1,0 +1,21 @@
+﻿<Window x:Class="DataBaseApp.UpdateDataOption"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseApp"
+        mc:Ignorable="d"
+        Title="UpdateDataOption" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="UpdateTextBox" HorizontalAlignment="Center" Margin="0,76,0,0" Text="Input data" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" MouseDoubleClick="UpdateTextBox_MouseDoubleClick"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,34,0,0" Text="Input data separated by space" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="UpdateAnimal" Content="Update animal table" HorizontalAlignment="Center" Height="29" Margin="0,155,0,0" VerticalAlignment="Top" Width="212" Click="UpdateAnimal_Click"/>
+        <Button x:Name="UpdateCorral" Content="Update corral table" HorizontalAlignment="Center" Height="29" Margin="0,194,0,0" VerticalAlignment="Top" Width="212" Click="UpdateCorral_Click"/>
+        <Button x:Name="UpdateBarn" Content="Update barn table" HorizontalAlignment="Center" Height="29" VerticalAlignment="Top" Width="212" Click="UpdateBarn_Click" Margin="0,235,0,0"/>
+        <Button x:Name="UpdateFood" Content="Update food table" HorizontalAlignment="Center" Height="29" Margin="0,276,0,0" VerticalAlignment="Top" Width="212" Click="UpdateFood_Click"/>
+        <Button x:Name="UpdateFeeding" Content="Update feeding table" HorizontalAlignment="Center" Height="29" Margin="0,318,0,0" VerticalAlignment="Top" Width="212" Click="UpdateFeeding_Click"/>
+        <Button x:Name="UpdateSickAnimals" Content="Update sick animals table" HorizontalAlignment="Center" Height="29" Margin="0,361,0,0" VerticalAlignment="Top" Width="212" Click="UpdateSickAnimals_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,117,0,0" Text="Choose table to update data" TextWrapping="Wrap" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

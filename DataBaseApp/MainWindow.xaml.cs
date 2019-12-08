@@ -39,6 +39,10 @@ namespace DataBaseApp
             {
                 AddNewData();
             }
+            if (UpdateTableOption.IsChecked == true)
+            {
+                UpdateData();
+            }
         }
 
         #region Option Methods
@@ -98,6 +102,13 @@ namespace DataBaseApp
         {
             AddNewDataOption addNewDataOption = new AddNewDataOption();
             addNewDataOption.Show();
+            this.Close();
+        }
+
+        private void UpdateData()
+        {
+            UpdateDataOption updateDataOption = new UpdateDataOption();
+            updateDataOption.Show();
             this.Close();
         }
         #endregion

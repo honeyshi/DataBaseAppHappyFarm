@@ -18,5 +18,6 @@
         <RadioButton x:Name="ClearTableOption" Content="Clear table" Grid.Column="1" HorizontalAlignment="Left" Margin="360,183,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="SearchByFieldOption" Content="Search sick animal by animal type" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,215,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="AddNewDataOption" Content="Add new value in table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,248,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="UpdateTableOption" Content="Update value in table" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="360,279,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
