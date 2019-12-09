@@ -47,6 +47,10 @@ namespace DataBaseApp
             {
                 DeleteById();
             }
+            if (DeleteByTextFieldOption.IsChecked == true)
+            {
+                DeleteByTextField();
+            }
         }
 
         #region Option Methods
@@ -120,6 +124,13 @@ namespace DataBaseApp
         {
             DeleteByIdOption deleteByIdOption = new DeleteByIdOption();
             deleteByIdOption.Show();
+            this.Close();
+        }
+
+        private void DeleteByTextField()
+        {
+            DeleteByTypeOption deleteByTypeOption = new DeleteByTypeOption();
+            deleteByTypeOption.Show();
             this.Close();
         }
         #endregion
