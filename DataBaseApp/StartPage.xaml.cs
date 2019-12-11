@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.IO;
 using System.Windows;
 using Npgsql;
 
@@ -14,6 +15,9 @@ namespace DataBaseApp
         private readonly string createBarn = "create_barn()";
         private readonly string createCorral = "create_corral()";
         private readonly string createAnimal = "create_animal()";
+        private readonly string createFood = "create_food()";
+        private readonly string createFeeding = "create_feeding()";
+        private readonly string createSickAnimal = "create_sick_animals()";
 
         public StartWindow()
         {
@@ -24,13 +28,6 @@ namespace DataBaseApp
         {
             string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;";
             NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
-            /*NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
-                $@"
-                CREATE DATABASE {nameDb}
-                WITH OWNER = postgres
-                ENCODING = 'UTF8'
-                CONNECTION LIMIT = -1;
-                ", npgsql);*/
             NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
                 $@"
                 CREATE OR REPLACE FUNCTION CREATE_DB(NAME TEXT)
@@ -38,6 +35,14 @@ namespace DataBaseApp
                 AS $$
                 BEGIN 
                 PERFORM DBLINK_EXEC('dbname=postgres user=postgres password=15postuser*15', 'CREATE DATABASE ' || NAME);
+                RETURN 1; 
+                END; $$ 
+                LANGUAGE PLPGSQL;
+
+                CREATE OR REPLACE FUNCTION DROP_DB(NAME TEXT)
+                RETURNS INTEGER
+                AS $$
+                BEGIN PERFORM DBLINK_EXEC('dbname=postgres user=postgres password=15postuser*15', 'DROP DATABASE ' || NAME);
                 RETURN 1; 
                 END; $$ 
                 LANGUAGE PLPGSQL;
@@ -63,12 +68,49 @@ namespace DataBaseApp
             {
                 npgsql.Close();
             }
+            MessageBox.Show("Create procedure for tables creation");
+            CreateAllStoredProcedures("dbscript.sql");
+            MessageBox.Show("Create tables");
+            CreateTable(createBarn);
+            CreateTable(createCorral);
+            CreateTable(createAnimal);
+            CreateTable(createFood);
+            CreateTable(createFeeding);
+            CreateTable(createSickAnimal);
+            MessageBox.Show("Create all procedures");
+            CreateAllStoredProcedures("dbscriptAll.sql");
+            MessageBox.Show("Add values in database");
+            CreateAllStoredProcedures("dbscriptValues.sql");
+            MessageBox.Show("Done!");
+        }
+
+        private void CreateAllStoredProcedures(string fileName)
+        {
+            string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;DataBase=farmdb";
+            NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
+            string script = File.ReadAllText(fileName);
+            NpgsqlCommand npgsqlCommand = new NpgsqlCommand(script, npgsql);
+
+            npgsql.Open();
+            npgsqlCommand.Connection = npgsql;
+            try
+            {
+                npgsqlCommand.ExecuteNonQuery();
+            }
+            catch (PostgresException ex)
+            {
+                MessageBox.Show(ex.MessageText);
+            }
+            finally
+            {
+                npgsql.Close();
+            }
         }
 
 
         private void CreateTable(string procedureName)
         {
-            FormattableString formattableString = $"Server=localhost;Port=5432;User Id=postgres;Password=test2012!;Database={nameDb};";
+            FormattableString formattableString = $"Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;Database=farmdb;";
             string connStr = formattableString.ToString();
             NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
             NpgsqlCommand npgsqlCommand = new NpgsqlCommand(

@@ -10,4 +10,16 @@
     <PackageReference Include="Npgsql" Version="4.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="dbscriptValues.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="dbscriptAll.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="dbscript.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

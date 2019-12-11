@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Data;
 using System.Windows;
 using Npgsql;
 
@@ -58,7 +59,7 @@ namespace DataBaseApp
         {
             string connStr = "Server=localhost;Port=5432;User Id=postgres;Password=15postuser*15;";
             NpgsqlConnection npgsql = new NpgsqlConnection(connStr);
-            NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
+            /*NpgsqlCommand npgsqlCommand = new NpgsqlCommand(
                 $@"
                 REVOKE CONNECT ON DATABASE {nameDb} FROM public;
                 SELECT pg_terminate_backend(pg_stat_activity.pid)
@@ -66,7 +67,10 @@ namespace DataBaseApp
                 WHERE pg_stat_activity.datname = '{nameDb}'
                   AND pid <> pg_backend_pid();
                 DROP DATABASE {nameDb}
-                ", npgsql);
+                ", npgsql);*/
+            NpgsqlCommand npgsqlCommand = new NpgsqlCommand("DROP_DB", npgsql);
+            npgsqlCommand.CommandType = CommandType.StoredProcedure;
+            npgsqlCommand.Parameters.AddWithValue("name", nameDb);
 
             npgsql.Open();
             npgsqlCommand.Connection = npgsql;
